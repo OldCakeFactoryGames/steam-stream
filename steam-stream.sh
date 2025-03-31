@@ -1,14 +1,14 @@
 #!/bin/bash
 
 function usage {
-    echo "steam-stream.sh <Source file> <Upload Token>"
+    echo "steam-stream.sh <Source file>"
     exit 1
 }
 SourceFile="$1"
 if [ -z "$SourceFile" ]; then
     usage
 fi
-UploadToken="$2"
+UploadToken=`cat code/steam_token.txt`
 if [ -z "$UploadToken" ]; then
     usage
 fi

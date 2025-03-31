@@ -3,9 +3,7 @@ version: '3'
 services:
   stream:
     image: linuxserver/ffmpeg
-    environment:
-      - steam_token=<put_steam_token_here>
     volumes:
       - .:/code
-    entrypoint: bash /code/steam-stream.sh /code/content/video_file.mp4 $(steam_token)
+    entrypoint: bash /code/steam-stream.sh /code/content/video_file.mp4
     restart: unless-stopped
